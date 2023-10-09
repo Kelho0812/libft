@@ -40,7 +40,12 @@ SRC = ft_atoi.c\
 	ft_striteri.c\
 	# ft_itoa.c\
 
+SRC_BONUS = ft_lstnew.c\
+	ft_lstadd_front.c\
+
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -48,11 +53,14 @@ ARFLAGS = rcs
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) bonus
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ) ${OBJ_BONUS}
+
+bonus : ${OBJ_BONUS}
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
 clean :
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) ${OBJ_BONUS}
 
 fclean : clean
 	@rm -f $(NAME)

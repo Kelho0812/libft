@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kelho <kelho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:26:47 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/09 17:37:08 by jorteixe         ###   ########.fr       */
+/*   Updated: 2023/10/09 22:53:11 by kelho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;
+
+void 			ft_lstadd_front(t_list **lst, t_list *new);
+t_list 			*ft_lstnew(void *content);
 unsigned int		ft_strlcat(char *dst, const char *src, size_t size);
 unsigned int		ft_strlcpy(char *dst, const char *src, size_t size);
 char				**ft_split(char const *s, char c);
