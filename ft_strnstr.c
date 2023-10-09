@@ -6,7 +6,7 @@
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 09:30:50 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/06 12:33:32 by jorteixe         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:33:37 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
 	unsigned int	i;
 	unsigned int	j;
-	char	*s;
+	char			*s;
 
 	i = 0;
 	j = 0;

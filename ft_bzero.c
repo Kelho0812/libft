@@ -6,7 +6,7 @@
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:23:33 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/04 15:02:06 by jorteixe         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:10:29 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,5 @@ void	ft_bzero(void *s, size_t n)
 
 	str = s;
 	i = 0;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
+	ft_memset(str, '\0', n);
 }

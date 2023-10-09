@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 12:04:43 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/09 10:54:06 by jorteixe         ###   ########.fr       */
+/*   Created: 2023/10/09 14:28:25 by jorteixe          #+#    #+#             */
+/*   Updated: 2023/10/09 15:58:07 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned char	*str;
+	char	*str1;
+	int		i;
+	int		j;
 
-	str = (unsigned char *)s;
-	while (n--)
-	{
-		if (*str == (unsigned char)c)
-		{
-			return ((void *)str);
-		}
-		str++;
-	}
-	return (NULL);
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
+	i = 0;
+	while (ft_strchr(set, s1[i]) && s1[i])
+		i++;
+	j = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[j]))
+		j--;
+	j = j - i + 1;
+	str1 = ft_substr(s1, i, j);
+	return (str1);
 }

@@ -6,7 +6,7 @@
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:05:03 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/06 10:26:44 by jorteixe         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:30:50 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,12 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*ptr;
-	unsigned int	i;
-	
+
 	ptr = malloc(nmemb * size);
-	i = 0;
-	if (!ptr || nmemb == 0 || size == 0)
+	if (!ptr)
 	{
-		return(NULL);
-	}	
-	while (i < nmemb)
-	{
-		ptr[i] = '\0';
-		i++;
+		return (NULL);
 	}
+	ft_bzero(ptr, (nmemb * size));
 	return ((void *) ptr);
 }

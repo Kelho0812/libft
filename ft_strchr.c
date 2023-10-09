@@ -6,7 +6,7 @@
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:19:54 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/06 16:38:55 by jorteixe         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:31:34 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //The strchr() function returns a pointer
 // to the first occurrence of the character c in the string s.
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != (char)c)
 	{

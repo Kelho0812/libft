@@ -6,7 +6,7 @@
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 12:53:51 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/04 15:09:25 by jorteixe         ###   ########.fr       */
+/*   Updated: 2023/10/09 09:42:58 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	str = s;
 	i = 0;
-	while (str[i] && i < n)
+	while (i < n)
 	{
-		str[i] = c;
+		*str++ = c;
 		i++;
 	}
-	return (s);
+	return ((void *)s);
 }

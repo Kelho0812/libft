@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 12:04:43 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/09 10:54:06 by jorteixe         ###   ########.fr       */
+/*   Created: 2023/10/09 17:12:02 by jorteixe          #+#    #+#             */
+/*   Updated: 2023/10/09 17:12:20 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char *ft_itoa(int n)
 {
-	unsigned char	*str;
 
-	str = (unsigned char *)s;
-	while (n--)
-	{
-		if (*str == (unsigned char)c)
-		{
-			return ((void *)str);
-		}
-		str++;
-	}
-	return (NULL);
 }

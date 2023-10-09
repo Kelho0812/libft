@@ -6,56 +6,37 @@
 /*   By: jorteixe <jorteixe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:29:43 by jorteixe          #+#    #+#             */
-/*   Updated: 2023/10/06 11:34:43 by jorteixe         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:30:14 by jorteixe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*give_memory_extra(char *src, unsigned int start, size_t len);
 
 // Allocates (with malloc(3)) and returns a substring from the string ’s’.
 // The substring begins at index ’start’ and is of maximum size ’len’
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*s2;
+	unsigned int	size;
 
+	if (start >= ft_strlen(s))
+	{
+		return (ft_strdup(""));
+	}
 	if (!s)
 	{
 		return (NULL);
 	}
-	s2 = (char *)s + start;
-	if (start >= (unsigned int)ft_strlen(s))
+	size = ft_strlen(s + start);
+	if (size < len)
 	{
-		return (ft_strdup(""));
+		len = size;
 	}
-	return (give_memory_extra(s2, start, len));
-}
-
-static char	*give_memory_extra(char *src, unsigned int start, size_t len)
-{
-	char			*new_str;
-	unsigned int	size;
-
-	size = ft_strlen(src + start);
-	if (size > len)
+	s2 = malloc(len + 1);
+	if (!s2)
 	{
-		new_str = (char *) malloc(len + 1);
-		if (!new_str)
-		{
-			return (NULL);
-		}
-		ft_strlcpy(new_str, src, (len + 1));
-		return (new_str);
+		return (NULL);
 	}
-	else
-	{
-		new_str = (char *) malloc(size + 1);
-		if (!new_str)
-		{
-			return (NULL);
-		}
-		ft_strlcpy(new_str, src, (size + 1));
-		return (new_str);
-	}
+	ft_strlcpy(s2, s + start, len + 1);
+	return (s2);
 }
