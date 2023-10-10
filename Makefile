@@ -38,10 +38,18 @@ SRC = ft_atoi.c\
 	ft_split.c\
 	ft_strmapi.c\
 	ft_striteri.c\
-	# ft_itoa.c\
+	ft_itoa.c\
 
 SRC_BONUS = ft_lstnew.c\
 	ft_lstadd_front.c\
+	ft_lstsize.c\
+	ft_lstlast.c\
+	ft_lstdelone.c\
+	ft_lstadd_back.c\
+	ft_lstclear.c\
+	ft_lstiter.c\
+	ft_lstmap.c\
+	ft_itoa.c\
 
 OBJ = $(SRC:.c=.o)
 
@@ -57,7 +65,7 @@ $(NAME) : $(OBJ) bonus
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ) ${OBJ_BONUS}
 
 bonus : ${OBJ_BONUS}
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ_BONUS)
 
 clean :
 	@rm -f $(OBJ) ${OBJ_BONUS}

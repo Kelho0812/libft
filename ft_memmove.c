@@ -34,11 +34,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 void	*ft_memcpy_overlap(void *dest, const void *src, size_t n)
 {
-	unsigned char		*dst;
-	unsigned char		*s;
+	unsigned char	*dst;
+	unsigned char	*s;
 
-	dst = (unsigned char *) dest;
-	s = (unsigned char *) src;
+	dst = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	s = s + n - 1;
 	dst = dst + n - 1;
 	if (!src && !dest)

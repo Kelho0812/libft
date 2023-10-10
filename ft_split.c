@@ -74,7 +74,7 @@ static int	string_size(char const *s, char c)
 	int	i;
 
 	i = 0;
-	while (s[i] != c && s[i] != '\0' )
+	while (s[i] != c && s[i] != '\0')
 	{
 		i++;
 	}

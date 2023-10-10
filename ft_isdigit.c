@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//Checks if 'n' is a number
+// Checks if 'n' is a number
 int	ft_isdigit(int n)
 {
 	if (n >= 48 && n <= 57)

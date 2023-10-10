@@ -14,7 +14,7 @@
 
 unsigned int	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int		i;
+	unsigned int	i;
 
 	i = 0;
 	if (size != 0)
