@@ -61,11 +61,11 @@ ARFLAGS = rcs
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) bonus
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJ) ${OBJ_BONUS}
+$(NAME) : $(OBJ)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-bonus : ${OBJ_BONUS}
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJ_BONUS)
+bonus : ${OBJ_BONUS} $(OBJ) 
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean :
 	@rm -f $(OBJ) ${OBJ_BONUS}
